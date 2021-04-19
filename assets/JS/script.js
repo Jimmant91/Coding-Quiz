@@ -17,12 +17,10 @@ function countdown() {
         timeLeft--;
       } else {
         // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-        timerEl.textContent = '';
+        timerEl.textContent = 'Time is up!';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
-        // Call the `displayMessage()` function
-        displayMessage();
-      }
+        }
     }, 1000);
 }
 

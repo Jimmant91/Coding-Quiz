@@ -11,12 +11,8 @@ function countdown() {
         timerEl.textContent = "Timer: " + timeLeft;
         // Decrement `timeLeft` by 1
         timeLeft--;
-      } else if (timeLeft === 1) {
-        // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-        timerEl.textContent = "Timer: " + timeLeft;
-        timeLeft--;
       } else {
-        // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+        // Once `timeLeft` gets to 0, set `timerEl` to 'Time is up!'
         timerEl.textContent = 'Time is up!';
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);

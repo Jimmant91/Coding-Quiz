@@ -1,4 +1,5 @@
 var timerEl = document.getElementById('timer');
+var startButton = document.getElementById('start');
 
 function countdown() {
     var timeLeft = 75;
@@ -20,4 +21,5 @@ function countdown() {
     }, 1000);
 }
 
-countdown()
+// Setting the timer to only run on Start click //
+start.addEventListener('click', countdown)

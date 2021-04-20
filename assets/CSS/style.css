@@ -13,7 +13,7 @@ h4 {
     margin-left: auto;
 }
 
-.container {
+#container {
     display: inline-block;
     width: 100%;
     margin-top: 5%;

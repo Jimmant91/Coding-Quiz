@@ -1,5 +1,6 @@
 var timerEl = document.getElementById('timer');
 var startButton = document.getElementById('start');
+var container = document.getElementById('container')
 
 var answerPlaceholders = {
     a: '',
@@ -8,48 +9,52 @@ var answerPlaceholders = {
     d: ''
 }
 
-// Slide 2
-// Question #1
-// Commonly used Data Types do not include:
-// 1.Strings
-// 2.Booleans
-// 3. Alerts
-// 4. Numbers
+quizQuestions = [
+    {
+        question: "Commonly used Data Types do not include:",
+        a: "Strings",
+        b: "Booleans",
+        c: "Alerts",
+        d: "Numbers",
+        correctAnswer: "c"
+    },
 
-// Slide 3
-// Question #2
-// The condition in an if/else statement is enclosed within _______.
-// 1.      Quotes
-// 2.      Curly brackets
-// 3.      Parenthesis
-// 4.      Square brackets
+    {
+        question: "The condition in an if/else statement is enclosed within _______.",
+        a: "Quotes",
+        b: "Curly brackets",
+        c: "Parenthesis",
+        d: "Square brackets",
+        correctAnswer: "c"
+    },
 
-// Slide 4
-// Question #3
-// Arrays in JavaScript can be used to store _____.
-// 1.      Numbers and strings
-// 2.      Other arrays
-// 3.      Booleans
-// 4.      All the above
- 
-// Slide 5
-// Question #4
-// String values must be enclosed within _______
-// when being assigned to variables.
-// 1.      Commas
-// 2.      Curly brackets
-// 3.      Quotes
-// 4.      Parenthesis
+    {
+        question: "Arrays in JavaScript can be used to store _____.",
+        a: "Numbers and strings",
+        b: "Other arrays",
+        c: "Booleans",
+        d: "All of the above",
+        correctAnswer: "d"
+    },
 
-// Slide 6
-// Question #5
-// A very useful tool used during development
-// and debugging for printing content to the
-// debugger is:
-// 1.      JavaScript
-// 2.      Terminal/bash
-// 3.      For loops
-// 4.      Console.log
+    {
+        question: "String Values must be enclosed within _____ when being assigned to variables.",
+        a: "Commas",
+        b: "Curly brackets",
+        c: "Quotes",
+        d: "Parenthesis",
+        correctAnswer: "c"
+    },
+
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        a: "JavaScript",
+        b: "Terminal/bash",
+        c: "For loops",
+        d: "Console.log",
+        correctAnswer: "d"
+    }
+]
 
 // Slide 7
 // All done!
@@ -76,17 +81,25 @@ function countdown() {
     }, 1000);
 }
 
-function askQuestion(queryObject) {
-    var question = document.createElement('h1');
-    question.setAttribute("class", "question");
-    question.textcontent = queryObject.question;
-    content.appendChild(question);
+// Possible code for changing div for each section of question/answers
+function askQuestion() {
+    document.createElement("h1");
+    h1.textContent("hello there")
 
-    var answers = Object.entries(queryObject.answers);
 }
 
-// Setting the timer to only run on Start click //
+// Setting the timer to only run on Start click
 start.addEventListener('click', () => {
     countdown();
-    askQuestion(queryObject);
+    container.innerHTML = "";
+    askQuestion();
 });
+
+// Theoretical coding process
+// 1. Clicking start begins timer and moves to first question
+// 2. Use a for loop to loop through questions and answers
+// 3. When selecting an answer, compare clicked answer to true answer, move to next question
+// 3b. If incorrect answer is clicked, subtract 10 seconds, move to next question
+// 4. After last question is answered, game is over
+// 4b. If timer runs out, game is over
+// 5. Store final score and initials to scoreboard (final score will always be equal to time remaining)

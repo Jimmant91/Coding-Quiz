@@ -16,7 +16,10 @@ function startCountdown() {
             timerEl.textContent = 'Time is up!';
             // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
-        }
-
+            }
+            if(secondsLeft === 0) {
+                alert("Sorry, we are out of time!")
+                clearInterval(timerInterval);
+            }
     }, 1000);
 }

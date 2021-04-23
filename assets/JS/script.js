@@ -43,13 +43,18 @@ function askQuestion() {
 
 }
 
-function handleChoice() {
-    console.log(this.textContent === quizQuestions[quizIndex].correctAnswer)
-
-    quizIndex++
-
-    askQuestion()
+function checkAnswer(correctAnswer) {
+    if (quizQuestions[quizIndex].correctAnswer !== correctAnswer){
+        timeLeft - 10;
+    }
 }
+
+function handleChoice() {
+   quizIndex++;
+   askQuestion();
+   checkAnswer();
+}
+
 
 // Theoretical coding process
 // 1. Clicking start begins timer and moves to first question

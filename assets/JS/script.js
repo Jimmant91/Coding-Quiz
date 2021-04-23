@@ -1,10 +1,5 @@
 let quizIndex = 0
-// Slide 7
-// All done!
-// Your final score is ___.
-// Enter initials: _____             Submit Button
 
-// Setting the timer to only run on Start click
 startButton.addEventListener('click', () => {
     startBox.classList.add("hide")
     quizBox.classList.remove("hide")
@@ -39,17 +34,21 @@ function askQuestion() {
         btn.textContent = choice
         btn.addEventListener("click", handleChoice)
         quizBox.appendChild(btn)
+        
     }
 
 }
 
 
 function handleChoice() {
-   quizIndex++;
-   askQuestion();
-   if (quizQuestions[quizIndex].correctAnswer !== correctAnswer){
-    timeLeft =- 10;
-}
+    function checkAnswer() {
+        if() {
+            
+        }    
+    }
+    checkAnswer ()
+    quizIndex++
+    askQuestion()
 }
 
 
@@ -61,3 +60,10 @@ function handleChoice() {
 // 4. After last question is answered, game is over
 // 4b. If timer runs out, game is over
 // 5. Store final score and initials to scoreboard (final score will always be equal to time remaining)
+
+// Slide 7
+// All done!
+// Your final score is ___.
+// Enter initials: _____             Submit Button
+
+// Setting the timer to only run on Start click

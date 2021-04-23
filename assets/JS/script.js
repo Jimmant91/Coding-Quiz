@@ -43,16 +43,13 @@ function askQuestion() {
 
 }
 
-function checkAnswer(correctAnswer) {
-    if (quizQuestions[quizIndex].correctAnswer !== correctAnswer){
-        timeLeft - 10;
-    }
-}
 
 function handleChoice() {
    quizIndex++;
    askQuestion();
-   checkAnswer();
+   if (quizQuestions[quizIndex].correctAnswer !== correctAnswer){
+    timeLeft =- 10;
+}
 }
 
 

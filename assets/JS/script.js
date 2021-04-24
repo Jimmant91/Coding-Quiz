@@ -44,10 +44,8 @@ function askQuestion() {
 }
 
 function handleChoice() {
-    console.log(this.textContent === quizQuestions[quizIndex].correctAnswer)
 
     quizIndex++
-
     askQuestion()
 }
 

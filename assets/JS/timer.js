@@ -17,7 +17,7 @@ function startCountdown() {
             // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
             }
-            if(secondsLeft === 0) {
+            if(timeLeft === 0) {
                 alert("Sorry, we are out of time!")
                 clearInterval(timerInterval);
             }

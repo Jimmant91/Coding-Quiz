@@ -29,9 +29,13 @@ function askQuestion() {
 
     // for(let i = 0; i < quizObject.choices.length; i++)
     // choice === quizObject.choices[i]
+
+    // below is a simpler version of aboveblue
     for (const choice of questionObj.choices) {             
         const btn = document.createElement("button")
         btn.textContent = choice
+        btn.style.backgroundColor = "orange"
+        btn.style.color = "white"
         btn.addEventListener("click", handleChoice)
         quizBox.appendChild(btn)
         
@@ -39,14 +43,10 @@ function askQuestion() {
 
 }
 
-
 function handleChoice() {
-    function checkAnswer() {
-        if() {
-            
-        }    
-    }
-    checkAnswer ()
+    // compare logic
+
+
     quizIndex++
     askQuestion()
 }

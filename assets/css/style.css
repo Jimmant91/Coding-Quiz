@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+h4 {
+    margin-top: 0%;
+}
+
+#timer {
+    margin-left: auto;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5%;
+    justify-content: center;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+p {
+    font-weight: bolder;
+}

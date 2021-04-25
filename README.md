@@ -11,4 +11,6 @@ A template High Scores page is also created, but must still be linked to the use
 
 Link: <a href = "https://jimmant91.github.io/Coding-Quiz/">Coding Quiz</a>
 
-##
+## Demo
+
+![Demo](assets/images/p5nnxjWu9B.gif)

@@ -72,7 +72,7 @@ function endGame () {
     submit.textContent = "Submit"
     userInitialsBox.appendChild(submit)
 
-    submit.addEventListener("submit", submitScore)
+    submit.addEventListener("click", submitScore)
 }
 
 

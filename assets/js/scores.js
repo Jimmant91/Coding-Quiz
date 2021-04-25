@@ -20,7 +20,6 @@ function endGame () {
     //let user input initials
     userInitialsBox.innerHTML = ""
     initialsEl = document.createElement("input")
-    initialsEl.type = ("form")
     initialsEl.setAttribute("id", "user-initials")
     userInitialsBox.appendChild(initialsEl)
 
@@ -32,6 +31,6 @@ function endGame () {
 }
 
 function submitScore() {
-    var inputInitials = document.querySelector("user-initials").value;
+    var inputInitials = document.querySelector("#user-initials").value;
     localStorage.setItem("initials", inputInitials)
 }

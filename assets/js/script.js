@@ -64,21 +64,24 @@ function endGame () {
 
     //let user input initials
     userInitialsBox.innerHTML = ""
-    const initialsEl = document.createElement("input")
+    var initialsEl = document.createElement("input")
     initialsEl.type = ("form")
     userInitialsBox.appendChild(initialsEl)
 
     const submit = document.createElement("button")
     submit.textContent = "Submit"
     userInitialsBox.appendChild(submit)
+
+    submit.addEventListener("submit", submitScore)
 }
 
 
 
 function handleChoice(event) {
     //compare code
-    var chosen = event.target.value;
-    if (chosen != quizQuestions[quizIndex].correctAnswer) {
+    let chosen = event.target.value;
+    // console.log(typeof(chosen))
+    if (chosen !== quizQuestions[quizIndex].correctAnswer) {
         timeLeft = timeLeft - 10;
     }
     

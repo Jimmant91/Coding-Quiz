@@ -65,9 +65,12 @@ function endGame () {
     //let user input initials
     userInitialsBox.innerHTML = ""
     const initialsEl = document.createElement("input")
-    initialsEl.placeholder = "Type Your Initials"
-    // initialsEl.addEventListener("submit",)
+    initialsEl.type = ("form")
     userInitialsBox.appendChild(initialsEl)
+
+    const submit = document.createElement("button")
+    submit.textContent = "Submit"
+    userInitialsBox.appendChild(submit)
 }
 
 

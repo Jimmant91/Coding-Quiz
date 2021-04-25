@@ -46,11 +46,28 @@ function askQuestion() {
 
 function endGame () {
     
-    clearInterval(timeInterval);
-    score = timeLeft;
+    //stop timer
+    clearInterval(timeInterval)
+    timerEl.style.display = "none"
+    
     quizBox.classList.add("hide")
     userInitialsBox.classList.remove("hide")
     highscoresBox.classList.remove("hide")
+    
+    //show user's score
+    score = timeLeft;
+
+    highscoresBox.innerHTML = ""
+    const highScoresEl = document.createElement("div")
+    highScoresEl.textContent = "Your score is: " + score
+    highscoresBox.appendChild(highScoresEl)
+
+    //let user input initials
+    userInitialsBox.innerHTML = ""
+    const initialsEl = document.createElement("input")
+    initialsEl.placeholder = "Type Your Initials"
+    // initialsEl.addEventListener("submit",)
+    userInitialsBox.appendChild(initialsEl)
 }
 
 

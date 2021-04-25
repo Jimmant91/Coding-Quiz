@@ -1,5 +1,5 @@
 let timeLeft;
-let timerInterval;
+let timeInterval;
 
 function startCountdown() {
     timeLeft = 75;
@@ -13,7 +13,7 @@ function startCountdown() {
 
         if (timeLeft < 1) {
             // Once `timeLeft` gets to 0, set `timerEl` to 'Time is up!'
-            alert.textContent = 'Time is up!';
+            timerEl.textContent = 'Time is up!';
             // Use `clearInterval()` to stop the timer
             clearInterval(timeInterval);
         }

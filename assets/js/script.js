@@ -1,8 +1,5 @@
 let quizIndex = 0
-// Slide 7
-// All done!
-// Your final score is ___.
-// Enter initials: _____             Submit Button
+let score;
 
 // Setting the timer to only run on Start click
 startButton.addEventListener('click', () => {
@@ -18,36 +15,62 @@ startButton.addEventListener('click', () => {
 
 // Possible code for changing div for each section of question/answers
 function askQuestion() {
-    quizBox.innerHTML = ""
-    const questionObj = quizQuestions[quizIndex]
+    if (quizIndex < quizQuestions.length) {
+        quizBox.innerHTML = ""
+        const questionObj = quizQuestions[quizIndex]
 
-    const questionEl = document.createElement("div")
-    questionEl.textContent = questionObj.question;
-    quizBox.appendChild(questionEl)
+        const questionEl = document.createElement("div")
+        questionEl.textContent = questionObj.question
+        quizBox.appendChild(questionEl)
 
-    // for(let i = 0; i < quizQuestions[quizIndex].choices.length; i++){
-    //     const btn = document.createElement("button")
-    //     btn.textContent = quizQuestions[quizIndex].choices[i]
-    //     btn.addEventListener("click", handleChoice)
-    //     quizBox.appendChild(btn)
-    // }
+        // for(let i = 0; i < quizQuestions[quizIndex].choices.length; i++){
+        //     const btn = document.createElement("button")
+        //     btn.textContent = quizQuestions[quizIndex].choices[i]
+        //     btn.addEventListener("click", handleChoice)
+        //     quizBox.appendChild(btn)
+        // }
 
-    // for(let i = 0; i < quizObject.choices.length; i++)
-    // choice === quizObject.choices[i]
-    for (const choice of questionObj.choices) {             
-        const btn = document.createElement("button")
-        btn.textContent = choice
-        btn.addEventListener("click", handleChoice)
-        quizBox.appendChild(btn)
+        // for(let i = 0; i < quizObject.choices.length; i++)
+        // choice === quizObject.choices[i]
+        for (const choice of questionObj.choices) {             
+            const btn = document.createElement("button")
+            btn.textContent = choice
+            btn.addEventListener("click", handleChoice)
+            quizBox.appendChild(btn)
+        }
+    } else {
+        
+        endGame();
     }
-
 }
 
-function handleChoice() {
+function endGame () {
+    
+    clearInterval(timeInterval);
+    score = timeLeft;
+    quizBox.classList.add("hide")
+    userInitialsBox.classList.remove("hide")
+    highscoresBox.classList.remove("hide")
+}
 
-    quizIndex++
+
+
+function handleChoice(event) {
+    //compare code
+    var chosen = event.target.value;
+    if (chosen != quizQuestions[quizIndex].correctAnswer) {
+        timeLeft = timeLeft - 10;
+    }
+    
+    quizIndex++;
     askQuestion()
+    
 }
+   
+    
+    
+   
+    
 
 // Theoretical coding process
 // 1. Clicking start begins timer and moves to first question

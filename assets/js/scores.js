@@ -1,3 +1,4 @@
+
 var initialsEl;
 function endGame () {
     
@@ -32,5 +33,5 @@ function endGame () {
 
 function submitScore() {
     var inputInitials = document.querySelector("#user-initials").value;
-    localStorage.setItem("initials", inputInitials)
+    localStorage.setItem("initials", JSON.stringify(inputInitials)) + localStorage.setItem("score", JSON.stringify(score))
 }

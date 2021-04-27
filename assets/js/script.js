@@ -44,36 +44,7 @@ function askQuestion() {
     }
 }
 
-function endGame () {
-    
-    //stop timer
-    clearInterval(timeInterval)
-    timerEl.style.display = "none"
-    
-    quizBox.classList.add("hide")
-    userInitialsBox.classList.remove("hide")
-    highscoresBox.classList.remove("hide")
-    
-    //show user's score
-    score = timeLeft;
 
-    highscoresBox.innerHTML = ""
-    const highScoresEl = document.createElement("div")
-    highScoresEl.textContent = "Your score is: " + score
-    highscoresBox.appendChild(highScoresEl)
-
-    //let user input initials
-    userInitialsBox.innerHTML = ""
-    var initialsEl = document.createElement("input")
-    initialsEl.type = ("form")
-    userInitialsBox.appendChild(initialsEl)
-
-    const submit = document.createElement("button")
-    submit.textContent = "Submit"
-    userInitialsBox.appendChild(submit)
-
-    submit.addEventListener("click", submitScore)
-}
 
 
 
